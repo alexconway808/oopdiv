@@ -9,38 +9,49 @@ function Div(){
   }
 }
 
+//Define RedDiv and BlueDiv
+function RedDiv(){
+  Div.call(this);
+}
+
+function BlueDiv(){
+  Div.call(this);
+}
+
 
 //Create an instance to proove it works
 $( document ).ready(function (){
-  var testDiv = new Div();
   var newredDiv = new RedDiv();
   var newblueDiv  = new BlueDiv();
-  testDiv.draw();
   newredDiv.draw();
   newblueDiv.draw();
 });
 
 
-//Create sub classes
-function RedDiv(color){
-RedDiv.prototype = new Div();
-  Div.call(this);
-  this.color = "#FF0000";
-}
-
-
-function BlueDiv(color){
-BlueDiv.prototype = new Div();
-  Div.call(this);
-  this.color = "#0000FF";
-}
 
 
 
-//
-RedDiv.prototype.click = function(){
 
-}
+// //Create sub classes
+// function RedDiv(color){
+// RedDiv.prototype = new Div();
+//   Div.call(this);
+//   this.color = "#FF0000";
+// }
+
+
+// function BlueDiv(color){
+// BlueDiv.prototype = new Div();
+//   Div.call(this);
+//   this.color = "#0000FF";
+// }
+
+
+
+// //
+// RedDiv.prototype.click = function(){
+
+// }
 
 
 //Main class attempt 2
