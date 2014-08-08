@@ -2,9 +2,10 @@
 //Create base div class
 function Div(){
   this.color = null;
+  this.htmlElement = null;
   this.draw = function (){
-    var newDiv = $("<div>"+this.color+"</div>");
-    $('body').append(newDiv);
+    this.htmlElement = $("<div>"+this.color+"</div>");
+    $('body').append(this.htmlElement);
   }
 }
 
@@ -21,24 +22,33 @@ $( document ).ready(function (){
 
 
 //Create sub classes
-function RedDiv(){
+function RedDiv(color){
+RedDiv.prototype = new Div();
   Div.call(this);
   this.color = "#FF0000";
-  // newDiv.css("background-color", "#FF0000");
-  // newDiv.css("height", "50px");
-  // newDiv.css("width", "50px");
 }
 
-function BlueDiv(){
+
+function BlueDiv(color){
+BlueDiv.prototype = new Div();
   Div.call(this);
   this.color = "#0000FF";
 }
 
 
-//Main class
-// Div.prototype.draw = function (){
-//   var newDiv = $('<div id="Div">DIV ON THE SCREEN</div>');
-//     $('body').append(newDiv);
+
+//
+RedDiv.prototype.click = function(){
+
+}
+
+
+//Main class attempt 2
+
+//Div.prototype.draw = function (){
+//   this.element = $('<div>DIV ON THE SCREEN</div>');
+//     $('p').append(this.element);
+//     $(this.element).click(this.click);
 // }
 
 
