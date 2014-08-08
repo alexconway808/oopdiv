@@ -1,4 +1,4 @@
-
+//Main Class
 //Create base div class
 function Div(){
   this.color = null;
