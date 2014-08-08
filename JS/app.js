@@ -24,9 +24,9 @@ $( document ).ready(function (){
 function RedDiv(){
   Div.call(this);
   this.color = "#FF0000";
-  newDiv.css("background-color", "#FF0000");
-  newDiv.css("height", "50px");
-  newDiv.css("width", "50px");
+  // newDiv.css("background-color", "#FF0000");
+  // newDiv.css("height", "50px");
+  // newDiv.css("width", "50px");
 }
 
 function BlueDiv(){
