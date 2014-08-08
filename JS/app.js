@@ -10,7 +10,7 @@ function Div(name){
 //Add a draw method to your base class that adds a <div> to the page
 Div.prototype.draw = function(){
 //Create the HTML Element using This and Jquery
-  this.htmlElement = $("<div>DIV IS HERE</div>");
+  this.htmlElement = $("<div>Click Here</div>");
 //Append the HTML Element to the body/p element
   $("p").append(this.htmlElement);
 //Assign a click function to the HTML element
@@ -18,33 +18,37 @@ Div.prototype.draw = function(){
 }
 
 
-//Create a blue div and red div class and make them draw with the
-//right colors
-//This function defines a blueDiv subclass, this is the pigdog
-function blueDiv(color){}
+//Create a blue div and red div class
+//This function defines a Bluediv subclass, this is the pigdog
+function BlueDiv(color){}
 //Create the new div by connecting it to prototype, this makes it draw
-blueDiv.prototype = new Div();
+BlueDiv.prototype = new Div();
 
 //Same for red Div
-function redDiv(color){}
-redDiv.prototype = new Div();
+function RedDiv(color){}
+RedDiv.prototype = new Div();
 
-//Add the document.ready function to get the new blueDiv and redDiv to 
+
+//Add a sub class specific click handler to add the color to both classes
+BlueDiv.prototype.click = function(){
+  $(this).css("color", "#0000FF");
+  console.log("blue click");
+}
+
+RedDiv.prototype.click = function(){
+  $(this).css("color", "#FF0000");
+  console.log("red click")
+};
+
+
+//Add the document.ready function to get the new Bluediv and RedDiv to 
 //render when the DOM is ready/loaded
 $(document).ready(function(){
-  var color = new blueDiv();
+  var color = new BlueDiv();
   color.draw();
 
-  var color = new redDiv();
+  var color = new RedDiv();
   color.draw();
 });
 
 
-//Add a sub class specific click handler to add the color to both classes
-blueDiv.prototype.click = function(){
-  $(this).css("color", "0000FF");
-}
-
-redDiv.prototype.click = function(){
-  $(this).css("color", "FF0000");
-};
